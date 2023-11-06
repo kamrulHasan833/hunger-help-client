@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Feed 10,000 Families",
+    "image": "https://i.ibb.co/Dp32Mst/food.png",
+    "short_description": "Our goal is to provide nutritious meals to 10,000 families in need by the end of the year."
+  },
+  {
+    "id": 2,
+    "title": "Reduce Food Waste",
+    "image": "https://i.ibb.co/zHPsM7Q/goals3.jpg",
+    "short_description": "We aim to reduce food waste by rescuing and redistributing 50,000 pounds of surplus food annually."
+  },
+  {
+    "id": 3,
+    "title": "Support Local Farmers",
+    "image": "https://i.ibb.co/zb3J7F9/goals1.jpg",
+    "short_description": "We're committed to sourcing fresh produce from local farmers and supporting their livelihoods."
+  },
+  {
+    "id": 4,
+    "title": "Engage Volunteers",
+    "image": "https://i.ibb.co/1bnsvdT/health.png",
+    "short_description": "Our goal is to engage 1,000 volunteers to help with food collection and distribution efforts."
+  }
+]

@@ -1,3 +1,93 @@
+/* font family */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: rgb(204, 42, 5);
+}
+.swiper-button-prev {
+  margin-left: 20px;
+  transform: translateX(15px);
+}
+
+.swiper-button-next {
+  margin-right: 20px;
+  transform: translateX(-15px);
+}
+.hero-swiper:hover .swiper-button-prev,
+.hero-swiper:hover .swiper-button-next {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+}
+.swiper-pagination-bullet {
+  transition: 0.4s ease-out;
+}
+.categories .swiper-button-prev,
+.categories .swiper-button-next {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 2px;
+  width: 35px;
+  height: 38px;
+}
+.categories .swiper-button-prev:hover,
+.categories .swiper-button-next:hover {
+  background: rgba(204, 42, 5, 0.9);
+}
+.categories .swiper-button-prev::after,
+.categories .swiper-button-next::after {
+  font-size: 15px;
+}
+
+.headroom--pinned {
+  background-color: white;
+  box-shadow: 1px 1px 8px 0 #e4e4e4;
+  z-index: 100;
+}
+
+/* back to top */
+
+.w-back-to-up svg circle:nth-child(2) {
+  fill: white;
+  stroke: #000000;
+}
+/* tooltips */
+.tooltip {
+  --tooltip-color: rgba(0, 0, 0, 0.85);
+  --tooltip-text-color: white;
+  --tooltip-tail: 5px;
+}
+.tooltip::before {
+  font-size: 12px;
+  border-radius: 0;
+}
+@media screen and (min-width: 0) {
+  .swiper-button-prev {
+    margin-left: 10px;
+  }
+  .categories .swiper-button-prev {
+    margin-left: -10px;
+  }
+
+  .swiper-button-next {
+    margin-right: 10px;
+  }
+  .categories .swiper-button-next {
+    margin-right: -10px;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 25px;
+  }
+}
