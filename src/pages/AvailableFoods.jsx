@@ -23,6 +23,8 @@ function AvailableFoods() {
         console.log(err);
       });
   }, [axiosInstance]);
+
+  // search funtionality
   const handleSearch = (searchInput) => {
     const food_name = searchInput.toLowerCase().trim();
     setLoading(true);
@@ -38,12 +40,33 @@ function AvailableFoods() {
         console.log(err);
       });
   };
+
+  // sort funtionality
   const handleSorting = (e) => {
-    console.log(e.target.value);
+    const sortObject = e.target.value;
+
+    if (sortObject === "Short Expiry") {
+      axiosInstance
+        .get("/hunger-help/v1/foods/ascending-expiry")
+        .then(({ data }) => {
+          setLoading(false);
+          return setFoods(data);
+        })
+        .catch((err) => console.log(err));
+    }
+    if (sortObject === "Long Expiry") {
+      axiosInstance
+        .get("/hunger-help/v1/foods/descending-expiry")
+        .then(({ data }) => {
+          setLoading(false);
+          return setFoods(data);
+        })
+        .catch((err) => console.log(err));
+    }
   };
   return (
     <main>
-      <section className="pt-10 md:pt-14 -mb-4 md:-mb-10">
+      <section className="pt-10 md:pt-14 ">
         <SectionWrapper>
           <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-6 ">
             <SearchFood hanldelSearch={handleSearch} />
@@ -51,7 +74,7 @@ function AvailableFoods() {
           </div>
         </SectionWrapper>
       </section>
-      <section className="pb-6 md:pb-14 lg:pb-20">
+      <section className="pb-6 md:pb-14 lg:pb-20 ">
         <SectionWrapper>
           <SectionHeader>
             <span>Available Foods</span>

@@ -8,10 +8,10 @@ function SortFood({ handleSorting }) {
         <select
           className="select select-bordered join-item focus:outline-none bg-primary-color hover:bg-white text-white hover:text-black "
           onChange={handleSorting}
-          defaultValue={"Sort product on expiry"}
+          defaultValue={"--Sort Food--"}
         >
           <option disabled> --Sort-- </option>
-          <option>Sort Expiry</option>
+          <option>Short Expiry</option>
           <option>Long Expiry</option>
         </select>
       </label>

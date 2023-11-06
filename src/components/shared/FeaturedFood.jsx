@@ -5,6 +5,7 @@ import FoodButton from "./FoodButton";
 
 function FeaturedFood({ food }) {
   const {
+    _id,
     food_name,
     food_image,
     quantity,
@@ -80,7 +81,7 @@ function FeaturedFood({ food }) {
           </p>
         </div>
         <div className="pt-4 md:pt-5">
-          <FoodButton path="/available-foods">Details</FoodButton>
+          <FoodButton path={`/food-details/${_id}`}>Details</FoodButton>
         </div>
       </div>
     </div>

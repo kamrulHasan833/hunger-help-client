@@ -39,7 +39,7 @@ function Slide({ slide }) {
 
           <Link
             className="bg-secondary-color px-7 py-2 md:px-10 md:py-3 rounded-full text-white hover:bg-primary-color font-bold text-sm md:text-base lg:text-lg mt-3 md:mt-6"
-            to="/products/all"
+            to="/available-foods"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="400"
