@@ -1,14 +1,24 @@
 import moment from "moment";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import SectionWrapper from "../components/layouts/SectionWrapper";
-import useAuth from "../hooks/useAuth";
 import useAxiosCustom from "../hooks/useAxiosCustom";
-function AddFood() {
-  const { user } = useAuth();
+
+function UpdateAFood() {
+  const loaderProduct = useLoaderData();
   const axiosInstance = useAxiosCustom();
-  const { displayName, email, photoURL } = user;
-  const currentDate = moment(Date.now()).format("yyy-MM-DD");
-  const handleCreateProduct = (e) => {
+  const {
+    food_name,
+    food_image,
+    quantity,
+    expiry_date,
+    donator,
+    pickup_location,
+    additional_notes,
+    food_status,
+  } = loaderProduct;
+  const { email, name, image } = donator;
+  const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
     const food_name = form.food_name.value;
@@ -24,9 +34,9 @@ function AddFood() {
       food_image,
       quantity,
       donator: {
-        name: displayName,
+        name,
         email,
-        image: photoURL,
+        image,
       },
       expiry_date,
       pickup_location,
@@ -35,14 +45,14 @@ function AddFood() {
     };
 
     axiosInstance
-      .post("/hunger-help/v1/foods", food)
+      .put("/hunger-help/v1/foods", food)
 
       .then(({ data }) => {
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             icon: "success",
             title: "Success!",
-            text: "You have added food successfully.",
+            text: "You have updated food successfully.",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -63,14 +73,14 @@ function AddFood() {
               <h1
                 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-title-color`}
               >
-                Add Food
+                Update Food
               </h1>
               <p className={`mt-2 pb-6 `}>
-                Please add a food by fill in the flowing fields.
+                Please update food by fill in the flowing fields.
               </p>
             </div>
             <div className={`w-full border `}>
-              <form className=" p-6 " onSubmit={handleCreateProduct}>
+              <form className=" p-6 " onSubmit={handleUpdateProduct}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* left */}
                   <div className="  space-y-2">
@@ -82,6 +92,7 @@ function AddFood() {
                         type="text"
                         placeholder="Food Name"
                         className="input input-bordered"
+                        defaultValue={food_name}
                         name="food_name"
                         required
                       />
@@ -93,6 +104,7 @@ function AddFood() {
                       <input
                         type="text"
                         placeholder="Food image"
+                        defaultValue={food_image}
                         className="input input-bordered"
                         name="food_image"
                         required
@@ -107,6 +119,7 @@ function AddFood() {
                       <input
                         type="number"
                         placeholder="Food Quantity"
+                        defaultValue={quantity}
                         className="input input-bordered"
                         name="quantity"
                         required
@@ -119,6 +132,7 @@ function AddFood() {
                       <input
                         type="text"
                         placeholder="Pickup Location"
+                        defaultValue={pickup_location}
                         className="input input-bordered"
                         name="pickup_location"
                         required
@@ -131,7 +145,7 @@ function AddFood() {
                       <input
                         type="date"
                         placeholder="Expiry date"
-                        defaultValue={currentDate}
+                        defaultValue={expiry_date}
                         className="input input-bordered"
                         name="expiry_date"
                         required
@@ -151,6 +165,7 @@ function AddFood() {
                       <textarea
                         type="text"
                         placeholder="Additional notes"
+                        defaultValue={additional_notes}
                         className="input input-bordered"
                         name="additional_notes"
                       />
@@ -162,7 +177,7 @@ function AddFood() {
                       <input
                         type="text"
                         placeholder="Food status"
-                        defaultValue="available"
+                        defaultValue={food_status}
                         className="input input-bordered"
                         name="food_status"
                         disabled
@@ -175,7 +190,7 @@ function AddFood() {
                       <input
                         type="text"
                         placeholder="Donato Name"
-                        defaultValue={displayName}
+                        defaultValue={name}
                         className="input input-bordered"
                         name="donator_name"
                         disabled
@@ -189,7 +204,7 @@ function AddFood() {
                       <input
                         type="text"
                         placeholder="Donator Image URL"
-                        defaultValue={photoURL}
+                        defaultValue={image}
                         className="input input-bordered"
                         name="donator_image"
                         disabled
@@ -211,8 +226,8 @@ function AddFood() {
                   </div>
                 </div>
                 <div className="form-control mt-6 text-center flex items-center">
-                  <button className="btn w-1/4 btn-primary bg-primary  hover:btn">
-                    Add Food
+                  <button className="btn w-1/4 btn-primary bg-primary-color border-none  hover:bg-secondary-color">
+                    Update
                   </button>
                 </div>
               </form>
@@ -223,4 +238,4 @@ function AddFood() {
     </main>
   );
 }
-export default AddFood;
+export default UpdateAFood;

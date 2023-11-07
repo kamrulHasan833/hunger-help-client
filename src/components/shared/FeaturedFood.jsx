@@ -15,7 +15,7 @@ function FeaturedFood({ food }) {
     additional_notes,
   } = food;
   const dateAndTime = moment(expiry_date).format("hh:mm A, D MMM, YYYY");
-  const { name, image } = donator;
+  const { name, image } = donator ? donator : {};
   return (
     <div className="cursor-pointer">
       <Tilt className="mb-2">
@@ -65,7 +65,7 @@ function FeaturedFood({ food }) {
             Pickup Loaction:{" "}
             <span className="font-normal text-gray-500">
               {" "}
-              {pickup_location.length > 30
+              {pickup_location && pickup_location.length > 30
                 ? pickup_location.slice(0, 30) + "..."
                 : pickup_location}
             </span>
@@ -74,7 +74,7 @@ function FeaturedFood({ food }) {
             Addition Notes:{" "}
             <span className="font-normal text-gray-500">
               {" "}
-              {additional_notes.length > 30
+              {additional_notes && additional_notes.length > 30
                 ? additional_notes.slice(0, 30) + "..."
                 : additional_notes}
             </span>
