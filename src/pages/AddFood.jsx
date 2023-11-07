@@ -211,7 +211,7 @@ function AddFood() {
                   </div>
                 </div>
                 <div className="form-control mt-6 text-center flex items-center">
-                  <button className="btn w-1/4 btn-primary bg-primary  hover:btn">
+                  <button className="btn w-1/4 btn-primary rounded-full bg-primary-color hover:bg-secondary-color text-white">
                     Add Food
                   </button>
                 </div>

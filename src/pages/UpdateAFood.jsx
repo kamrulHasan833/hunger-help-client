@@ -8,6 +8,7 @@ function UpdateAFood() {
   const loaderProduct = useLoaderData();
   const axiosInstance = useAxiosCustom();
   const {
+    _id,
     food_name,
     food_image,
     quantity,
@@ -18,6 +19,8 @@ function UpdateAFood() {
     food_status,
   } = loaderProduct;
   const { email, name, image } = donator;
+
+  const modified_expiry_date = moment(expiry_date).format("yyy-MM-DD");
   const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -45,7 +48,7 @@ function UpdateAFood() {
     };
 
     axiosInstance
-      .put("/hunger-help/v1/foods", food)
+      .put(`/hunger-help/v1/foods/users/${_id}`, food)
 
       .then(({ data }) => {
         if (data.modifiedCount > 0) {
@@ -145,7 +148,7 @@ function UpdateAFood() {
                       <input
                         type="date"
                         placeholder="Expiry date"
-                        defaultValue={expiry_date}
+                        defaultValue={modified_expiry_date}
                         className="input input-bordered"
                         name="expiry_date"
                         required
@@ -226,7 +229,7 @@ function UpdateAFood() {
                   </div>
                 </div>
                 <div className="form-control mt-6 text-center flex items-center">
-                  <button className="btn w-1/4 btn-primary bg-primary-color border-none  hover:bg-secondary-color">
+                  <button className="btn w-1/4 btn-primary rounded-full bg-primary-color border-none  hover:bg-secondary-color">
                     Update
                   </button>
                 </div>
