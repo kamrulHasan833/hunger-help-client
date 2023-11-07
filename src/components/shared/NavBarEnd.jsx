@@ -7,6 +7,7 @@ function NavbarEnd() {
   const { user, loading, signout } = useAuth();
   const { displayName, photoURL } = user ? user : {};
   const navigate = useNavigate();
+
   const handleLogout = () => {
     Swal.fire({
       title: "Are you sure?",

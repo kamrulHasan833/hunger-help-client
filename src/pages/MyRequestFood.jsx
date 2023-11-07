@@ -14,14 +14,14 @@ function MyRequestFood() {
   const { email } = user ? user : {};
   useEffect(() => {
     axiosInstance
-      .get(`/hunger-help/v1/requested-foods?email=${email}`)
+      .get(`/hunger-help/v1/request-foods?email=${email}`)
       .then(({ data }) => setFoods(data))
       .catch((err) => console.log(err));
   }, [email, axiosInstance]);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
-      text: "If you wanna delete this product, click Ok!",
+      text: "If you wanna delete this request, click Ok!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -29,11 +29,10 @@ function MyRequestFood() {
       confirmButtonText: "Ok",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://uniqueit-server.vercel.app/carts/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
+        axiosInstance
+          .delete(`/hunger-help/v1/request-foods/${id}`)
+
+          .then(({ data }) => {
             if (data.deletedCount > 0) {
               const updateProduct = foods.filter(
                 (product) => product._id !== id
@@ -41,8 +40,9 @@ function MyRequestFood() {
 
               Swal.fire({
                 icon: "success",
+
                 title: "Success!",
-                text: "You have deleted product successfully.",
+                text: "You have deleted request successfully.",
                 showConfirmButton: false,
                 timer: 1500,
               });
@@ -64,10 +64,10 @@ function MyRequestFood() {
             My Requested Foods
           </h3>
           <Link
-            to="/foods/all"
+            to="/available-foods"
             className="px-2 md:px-4 py-1 md:py-2 text-sm md:text-base text-white rounded-lg  bg-primary hover:bg-secondary"
           >
-            All Products
+            All Foods
           </Link>
         </div>
 
@@ -114,7 +114,7 @@ function MyRequestFood() {
         ) : (
           <>
             {" "}
-            <NoDataInfo>Empty Cart</NoDataInfo>
+            <NoDataInfo>Empty Request</NoDataInfo>
           </>
         )}
       </SectionWrapper>

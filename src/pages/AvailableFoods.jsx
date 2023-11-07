@@ -9,7 +9,7 @@ function AvailableFoods() {
   const [foods, setFoods] = useState(null);
   const [loading, setLoading] = useState(true);
   const axiosInstance = useAxiosCustom();
-  console.log(loading);
+
   // load all foods
   useEffect(() => {
     axiosInstance
@@ -33,7 +33,6 @@ function AvailableFoods() {
       .then(({ data }) => {
         setLoading(false);
         setFoods(data);
-        console.log(data);
       })
       .catch((err) => {
         setLoading(false);

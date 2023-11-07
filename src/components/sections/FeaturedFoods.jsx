@@ -37,8 +37,11 @@ function FeaturedFoods() {
             <p>loading...</p>
           )}
         </div>
-        <div className="text-center pt-8 md:pt-10">
-          <FoodButton className="bg-primary-color hover:bg-secondary-color py-3 md:text-xl">
+        <div className="text-center pt-10 md:pt-14">
+          <FoodButton
+            path="available-foods"
+            className="bg-primary-color hover:bg-secondary-color py-3 md:text-base"
+          >
             All Foods
           </FoodButton>
         </div>

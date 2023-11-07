@@ -53,14 +53,14 @@ function RequestModal({ food }) {
       })
       .then(({ data }) => {
         if (data.insertedId) {
-          navigate("/");
+          navigate("/my-food-requests");
         }
       })
       .catch((err) => console.log(err));
   };
   return (
     <dialog id="my_modal_1" className="modal">
-      <div className="modal-box w-[97%] max-w-4xl ">
+      <div className="modal-box w-[97%] max-w-4xl max-h-auto">
         <div className={`hero pt-8 md:pt-12 pb-8 md:pb-10 font-inter `}>
           <div className="w-full ">
             <div className="text-center mb-5 md:mb-6">
@@ -251,9 +251,23 @@ function RequestModal({ food }) {
                   </div>
                 </div>
                 <div className="form-control mt-6 text-center flex items-center">
-                  <button className="btn w-1/4 btn-primary bg-primary-color  text-white border-none hover:bg-secondary-color">
-                    Confirm
-                  </button>
+                  <div className="flex items-center gap-6">
+                    <button
+                      type="submit"
+                      className="btn  btn-primary bg-primary-color  text-white border-none hover:bg-secondary-color"
+                    >
+                      Confirm
+                    </button>
+
+                    <span
+                      onClick={() =>
+                        document.getElementById("my_modal_1").close()
+                      }
+                      className="btn hover:bg-primary-color  text-white border-none bg-secondary-color"
+                    >
+                      Cancel
+                    </span>
+                  </div>
                 </div>
               </form>
             </div>

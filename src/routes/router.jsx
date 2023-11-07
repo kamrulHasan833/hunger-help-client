@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import AddFood from "../pages/AddFood";
 import AvailableFoods from "../pages/AvailableFoods";
 import FoodDetails from "../pages/FoodDetails";
 import Home from "../pages/Home";
@@ -29,8 +30,12 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/my-requested-foods",
+        path: "/my-food-requests",
         element: <MyRequestFood />,
+      },
+      {
+        path: "/add-food",
+        element: <AddFood />,
       },
     ],
 

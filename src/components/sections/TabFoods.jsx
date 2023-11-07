@@ -9,7 +9,6 @@ function TabFoods() {
   const [current, setCurrent] = useState(0);
   const [foods, setFoods] = useState(null);
   const axiosInstance = useAxiosCustom();
-  console.log(current, loading);
 
   useEffect(() => {
     setLoading(true);
@@ -42,8 +41,6 @@ function TabFoods() {
         .catch((err) => console.log(err));
     }
   }, [axiosInstance, current]);
-
-  console.log(foods);
 
   return (
     <section className=" min-h-screen pb-8 md:pb-12 lg:pb-16 ">
