@@ -35,9 +35,9 @@ function MyRequestSingle({ food, handleDelete }) {
           <p className="text-xs md:text-sm ">${donation_money}</p>
         </td>
         <td>
-          <p className="text-sm text-primary-color md:text-base lg:text-lg font-medium capitalize">
+          <p className="text-sm text-primary-color md:text-base lg:text-lg font-bold  capitalize">
             {food_status === "available" ? (
-              food_status
+              "Pending.."
             ) : (
               <span className="text-desc-color">{food_status}</span>
             )}
@@ -46,10 +46,10 @@ function MyRequestSingle({ food, handleDelete }) {
         <th>
           <button
             onClick={() => handleDelete(_id)}
-            className={`px-2 md:px-3 py-1 md:py-2 text-xs md:text-sm  rounded-md ${
+            className={`px-2 md:px-3 py-1 md:py-2 text-xs md:text-sm  rounded-md text-white ${
               food_status === "available"
-                ? "bg-secondary-color text-white "
-                : ""
+                ? "bg-secondary-color hover:bg-opacity-50"
+                : " bg-desc-color cursor-not-allowed"
             }`}
             {...{ disabled: food_status === "available" ? false : true }}
           >

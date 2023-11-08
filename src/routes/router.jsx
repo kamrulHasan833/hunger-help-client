@@ -5,6 +5,7 @@ import AvailableFoods from "../pages/AvailableFoods";
 import FoodDetails from "../pages/FoodDetails";
 import Home from "../pages/Home";
 import ManageMyFoods from "../pages/ManageMyFoods";
+import ManageMySingleFoods from "../pages/ManageMySingleFoods";
 import MyRequestFood from "../pages/MyRequestFood";
 import NotFound from "../pages/NotFound";
 import Signin from "../pages/Signin";
@@ -18,6 +19,22 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
+      },
+      {
+        path: "/add-food",
+        element: <AddFood />,
+      },
+      {
+        path: "/update-food/:id",
+        element: <UpdateAFood />,
+        loader: async ({ params }) =>
+          await fetch(
+            `http://localhost:5000/hunger-help/v1/foods/single/${params.id}`
+          ),
+      },
+      {
+        path: "/manage-my-foods",
+        element: <ManageMyFoods />,
       },
       {
         path: "/available-foods",
@@ -36,20 +53,8 @@ const router = createBrowserRouter([
         element: <MyRequestFood />,
       },
       {
-        path: "/add-food",
-        element: <AddFood />,
-      },
-      {
-        path: "/update-food/:id",
-        element: <UpdateAFood />,
-        loader: async ({ params }) =>
-          await fetch(
-            `http://localhost:5000/hunger-help/v1/foods/single/${params.id}`
-          ),
-      },
-      {
-        path: "/manage-my-foods",
-        element: <ManageMyFoods />,
+        path: "/manage-single-food/:id",
+        element: <ManageMySingleFoods />,
       },
     ],
 

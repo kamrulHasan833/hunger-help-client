@@ -64,7 +64,7 @@ function TableFood({ food, handleDelete }) {
         <th>
           <div className="flex flex-col items-center gap-1">
             <Link
-              to="/manage-single-food"
+              to={`/manage-single-food/${_id}`}
               className="text-xs bg-yellow-600 hover:bg-primary-color  text-white px-2 py-1 rounded-md"
             >
               Manage

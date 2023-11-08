@@ -19,7 +19,7 @@ function UpdateAFood() {
     food_status,
   } = loaderProduct;
   const { email, name, image } = donator;
-
+  console.log(loaderProduct);
   const modified_expiry_date = moment(expiry_date).format("yyy-MM-DD");
   const handleUpdateProduct = (e) => {
     e.preventDefault();

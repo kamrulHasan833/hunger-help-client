@@ -117,7 +117,7 @@ function ManageMyFoods() {
         ) : (
           <>
             {" "}
-            <NoDataInfo>Empty Cart</NoDataInfo>
+            <NoDataInfo>No Food</NoDataInfo>
           </>
         )}
       </SectionWrapper>
