@@ -102,7 +102,7 @@ function Signup() {
 
   return (
     <SectionWrapper>
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center md:border md:px-10">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center  md:shadow-lg md:px-10">
         <div className=" col-span-2 hidden md:block">
           {" "}
           <img
@@ -112,7 +112,7 @@ function Signup() {
           />
         </div>
         <div className=" font-inter rounded-md pt-14 md:pt:20 pb-14 md:pb-20 col-span-1 md:col-span-3">
-          <div className="border md:border-none md:shadow-lg px-3 sm:px-10 py-6 sm:py-20  rounded-md ">
+          <div className=" border  px-3 sm:px-10 py-6 sm:py-20  rounded-md ">
             <h3 className=" text-3xl md:text-5xl font-semibold text-primary-color text-center ">
               Sign Up
             </h3>

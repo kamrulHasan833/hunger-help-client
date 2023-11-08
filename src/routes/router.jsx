@@ -8,6 +8,7 @@ import ManageMyFoods from "../pages/ManageMyFoods";
 import ManageMySingleFoods from "../pages/ManageMySingleFoods";
 import MyRequestFood from "../pages/MyRequestFood";
 import NotFound from "../pages/NotFound";
+import PrivateRoute from "../pages/PrivateRoute";
 import Signin from "../pages/Signin";
 import Signup from "../pages/Signup";
 import UpdateAFood from "../pages/UpdateAFood";
@@ -22,11 +23,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-food",
-        element: <AddFood />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <AddFood />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update-food/:id",
-        element: <UpdateAFood />,
+        element: (
+          <PrivateRoute>
+            <UpdateAFood />
+          </PrivateRoute>
+        ),
         loader: async ({ params }) =>
           await fetch(
             `http://localhost:5000/hunger-help/v1/foods/single/${params.id}`
@@ -34,7 +44,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/manage-my-foods",
-        element: <ManageMyFoods />,
+        element: (
+          <PrivateRoute>
+            <ManageMyFoods />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/available-foods",
@@ -42,7 +56,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/food-details/:id",
-        element: <FoodDetails />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <FoodDetails />
+          </PrivateRoute>
+        ),
         loader: async ({ params }) =>
           await fetch(
             `http://localhost:5000/hunger-help/v1/foods/single/${params.id}`
@@ -50,11 +69,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-food-requests",
-        element: <MyRequestFood />,
+        element: (
+          <PrivateRoute>
+            <MyRequestFood />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/manage-single-food/:id",
-        element: <ManageMySingleFoods />,
+        element: (
+          <PrivateRoute>
+            <ManageMySingleFoods />
+          </PrivateRoute>
+        ),
       },
     ],
 

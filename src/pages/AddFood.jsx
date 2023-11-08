@@ -54,8 +54,7 @@ function AddFood() {
   };
 
   return (
-    <main className={` "bg-white" `}>
-      {" "}
+    <main>
       <SectionWrapper>
         <div className={`hero pt-14 md:pt-20 pb-14 md:pb-20 font-inter `}>
           <div className="w-full ">
