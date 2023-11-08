@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -26,6 +27,24 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currenUser) => {
       setError(false);
       setUser(currenUser);
+      if (currenUser) {
+        axios
+          .post(
+            "http://localhost:5000/jsonwebtoken",
+            {
+              username: currenUser.displayName,
+              email: currenUser.email,
+            },
+            { withCredentials: true }
+          )
+          .then(() => {})
+          .catch((err) => console.log(err));
+      } else {
+        axios
+          .delete("http://localhost:5000/signout", { withCredentials: true })
+          .then(() => {})
+          .catch((err) => console.log(err));
+      }
       setLoading(false);
     });
 

@@ -4,7 +4,7 @@ import Spiner from "../components/sections/Spiner";
 import useAuth from "../hooks/useAuth";
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth();
-  console.log(children);
+
   const location = useLocation();
 
   if (loading) {

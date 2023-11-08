@@ -18,12 +18,12 @@ function FeaturedFood({ food }) {
   const { name, image } = donator ? donator : {};
   return (
     <div className="cursor-pointer">
-      <Tilt className="mb-2">
+      <Tilt className="mb-2" data-aos="fade-up" data-aos-duration="1000">
         <div>
           <img
             src={food_image ? food_image : ""}
             alt=""
-            className="rounded-t-sm  shadow-xl"
+            className="rounded-t-sm  "
           />
         </div>
       </Tilt>

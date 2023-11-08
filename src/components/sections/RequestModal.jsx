@@ -20,7 +20,7 @@ function RequestModal({ food }) {
     additional_notes,
     food_status,
   } = food;
-  const { name, email } = donator;
+  const { name, email } = donator ? donator : {};
   const currentDateMili = Date.now();
   const currentDate = moment(currentDateMili).format("hh:mm A, D MMM, YYYY");
   const dateAndTime = moment(expiry_date).format("hh:mm A, D MMM, YYYY");

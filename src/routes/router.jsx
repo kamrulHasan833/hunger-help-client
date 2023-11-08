@@ -25,7 +25,6 @@ const router = createBrowserRouter([
         path: "/add-food",
         element: (
           <PrivateRoute>
-            {" "}
             <AddFood />
           </PrivateRoute>
         ),
@@ -37,10 +36,6 @@ const router = createBrowserRouter([
             <UpdateAFood />
           </PrivateRoute>
         ),
-        loader: async ({ params }) =>
-          await fetch(
-            `http://localhost:5000/hunger-help/v1/foods/single/${params.id}`
-          ),
       },
       {
         path: "/manage-my-foods",
@@ -58,14 +53,9 @@ const router = createBrowserRouter([
         path: "/food-details/:id",
         element: (
           <PrivateRoute>
-            {" "}
             <FoodDetails />
           </PrivateRoute>
         ),
-        loader: async ({ params }) =>
-          await fetch(
-            `http://localhost:5000/hunger-help/v1/foods/single/${params.id}`
-          ),
       },
       {
         path: "/my-food-requests",
