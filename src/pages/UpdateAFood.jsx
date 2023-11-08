@@ -30,7 +30,7 @@ function UpdateAFood() {
   } = food;
   const axiosInstance = useAxiosCustom();
   const { email, name, image } = donator ? donator : {};
-  console.log(id);
+
   const isEmpty = useIsEmptyData(food, loading, error);
   const isError = useIsError(loading, error);
   const isLoading = useIsLoading(loading, error);

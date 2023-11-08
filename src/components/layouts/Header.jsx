@@ -7,7 +7,7 @@ function Header() {
   return (
     <header>
       <Navbar></Navbar>
-      {pathname === "/" && <HeroSlider></HeroSlider>}
+      <div>{pathname === "/" && <HeroSlider></HeroSlider>}</div>
     </header>
   );
 }
