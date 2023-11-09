@@ -2,7 +2,7 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import SectionWrapper from "../components/layouts/SectionWrapper";
+import SectionWrapperSmall from "../components/layouts/SectionWrapperSmall";
 import Error from "../components/sections/Error";
 import Spiner from "../components/sections/Spiner";
 import NoDataInfo from "../components/shared/NoDataInfo";
@@ -50,7 +50,7 @@ function UpdateAFood() {
       });
   }, [axiosInstance, id]);
 
-  const modified_expiry_date = moment(expiry_date).format("yyy-MM-DD");
+  const modified_expiry_date = moment(expiry_date).format("yyy-MM-DDTHH:mm");
   const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -58,7 +58,11 @@ function UpdateAFood() {
     const food_image = form.food_image.value;
     const quantity = form.quantity.value;
     const pickup_location = form.pickup_location.value;
-    const expiry_date = moment(form.expiry_date.value, "yyy-MM-DD").valueOf();
+    const donator_image = form.donator_image.value;
+    const expiry_date = moment(
+      form.expiry_date.value,
+      "yyy-MM-DDTHH:mm"
+    ).valueOf();
 
     const additional_notes = form.additional_notes.value;
 
@@ -69,7 +73,7 @@ function UpdateAFood() {
       donator: {
         name,
         email,
-        image,
+        image: donator_image,
       },
       expiry_date,
       pickup_location,
@@ -90,8 +94,6 @@ function UpdateAFood() {
             timer: 1500,
           });
         }
-        // reset the form
-        form.reset();
       })
       .catch((err) => console.log(err));
   };
@@ -107,8 +109,12 @@ function UpdateAFood() {
         ) : isEmpty ? (
           <NoDataInfo>No Food </NoDataInfo>
         ) : (
-          <SectionWrapper>
-            <div className={`hero pt-14 md:pt-20 pb-14 md:pb-20 font-inter `}>
+          <SectionWrapperSmall>
+            <div
+              className={`hero pt-14 md:pt-20 pb-14 md:pb-20 font-inter `}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               <div className="w-full ">
                 <div className="text-center lg:text-left mb-5 md:mb-6">
                   <h1
@@ -183,10 +189,12 @@ function UpdateAFood() {
                         </div>
                         <div className="form-control">
                           <label className="label">
-                            <span className={`label-text `}>Expiry Date</span>
+                            <span className={`label-text `}>
+                              Expiry Date & Time
+                            </span>
                           </label>
                           <input
-                            type="date"
+                            type="datetime-local"
                             placeholder="Expiry date"
                             defaultValue={modified_expiry_date}
                             className="input input-bordered"
@@ -250,7 +258,6 @@ function UpdateAFood() {
                             defaultValue={image}
                             className="input input-bordered"
                             name="donator_image"
-                            disabled
                           />
                         </div>
                         <div className="form-control">
@@ -277,7 +284,7 @@ function UpdateAFood() {
                 </div>
               </div>
             </div>
-          </SectionWrapper>
+          </SectionWrapperSmall>
         )}
       </>
     </main>

@@ -87,14 +87,18 @@ function ManageMyFoods() {
         <NoDataInfo>No Food Found</NoDataInfo>
       ) : (
         <SectionWrapper>
-          <div className="flex justify-between items-center  font-inter">
+          <div
+            className="flex justify-between items-center  font-inter"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <h3
               className={`text-xl md:text-2xl lg:text-3xl font-bold mt-12 md:mt-16 mb-6 font-inter `}
             >
               My Foods
             </h3>
             <Link
-              to="/foods/add-food"
+              to="/add-food"
               className="px-2 md:px-4 py-1 md:py-2 text-sm md:text-base text-white  bg-primary-color hover:bg-secondary-color rounded-full"
             >
               Donate More
@@ -103,7 +107,11 @@ function ManageMyFoods() {
 
           {foods && foods.length > 0 ? (
             <>
-              <div className="overflow-x-auto min-h-[50vh] pb-14 md:pb-24">
+              <div
+                className="overflow-x-auto min-h-[50vh] pb-14 md:pb-24"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 <table className="table">
                   {/* head */}
                   <thead>

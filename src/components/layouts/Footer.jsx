@@ -4,7 +4,7 @@ import SectionWrapper from "./SectionWrapper";
 
 function Footer() {
   return (
-    <footer className="bg-black">
+    <footer className="bg-black" data-aos="fade-up" data-aos-duration="1000">
       <SectionWrapper>
         <div className="footer p-10 text-base-content justify-between">
           <nav>

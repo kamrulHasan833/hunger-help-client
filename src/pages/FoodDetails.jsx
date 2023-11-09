@@ -62,7 +62,7 @@ function FoodctDetails() {
         <>
           {/* donor info section */}
           <section>
-            <div>
+            <div data-aos="fade-up" data-aos-duration="1000">
               <div className="pt-10 text-2xl md:4xl font-bold text-center pb-4">
                 <span>Donor Info</span>
               </div>
@@ -98,7 +98,11 @@ function FoodctDetails() {
                 <span>Food Details</span>
               </SectionHeader>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+              <div
+                className="grid grid-cols-1 md:grid-cols-2 gap-6 "
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 <div>
                   <img src={food_image} alt="" className="w-full" />
                 </div>

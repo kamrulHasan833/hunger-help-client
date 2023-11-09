@@ -104,7 +104,11 @@ function Signup() {
   return (
     <SectionWrapperSmall>
       <PageTitile title="Sign UP" />
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center  md:shadow-lg md:px-10">
+      <div
+        className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center  md:shadow-lg md:px-10"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <div className=" col-span-2 hidden md:block">
           {" "}
           <img

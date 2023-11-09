@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function SectionHeader({ children }) {
   return (
     <div
-      className="pt-10 md:pt-24 pb-6 md:pb-12 font-inter"
+      className="pt-10 md:pt-16 pb-6 md:pb-10 font-inter"
       data-aos="fade-up"
       data-aos-duration="1000"
     >

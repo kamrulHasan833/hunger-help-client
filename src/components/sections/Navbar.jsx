@@ -39,7 +39,7 @@ function Navbar() {
                 </label>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 z-50 px-0  bg-base-100 rounded-sm w-80 md:w-[500px] pb-0 shadow-xl "
+                  className="menu menu-sm dropdown-content mt-3 z-50 px-0  bg-base-100 rounded-sm w-80 md:w-[500px] pb-0 shadow-xl  "
                 >
                   {navItems}
                 </ul>

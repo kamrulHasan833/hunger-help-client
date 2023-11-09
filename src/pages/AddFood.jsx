@@ -1,6 +1,6 @@
 import moment from "moment";
 import Swal from "sweetalert2";
-import SectionWrapper from "../components/layouts/SectionWrapper";
+import SectionWrapperSmall from "../components/layouts/SectionWrapperSmall";
 import PageTitile from "../components/shared/PageTitile";
 import useAuth from "../hooks/useAuth";
 import useAxiosCustom from "../hooks/useAxiosCustom";
@@ -8,7 +8,8 @@ function AddFood() {
   const { user } = useAuth();
   const axiosInstance = useAxiosCustom();
   const { displayName, email, photoURL } = user;
-  const currentDate = moment(Date.now()).format("yyy-MM-DD");
+  const currentDate = moment(Date.now()).format("yyy-MM-DDTHH:mm");
+
   const handleCreateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -16,7 +17,10 @@ function AddFood() {
     const food_image = form.food_image.value;
     const quantity = form.quantity.value;
     const pickup_location = form.pickup_location.value;
-    const expiry_date = moment(form.expiry_date.value, "yyy-MM-DD").valueOf();
+    const expiry_date = moment(
+      form.expiry_date.value,
+      "yyy-MM-DDTHH:mm"
+    ).valueOf();
 
     const additional_notes = form.additional_notes.value;
 
@@ -57,8 +61,12 @@ function AddFood() {
   return (
     <main>
       <PageTitile title="Add Food" />
-      <SectionWrapper>
-        <div className={`hero pt-14 md:pt-20 pb-14 md:pb-20 font-inter `}>
+      <SectionWrapperSmall>
+        <div
+          className={`hero pt-14 md:pt-20 pb-14 md:pb-20 font-inter `}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <div className="w-full ">
             <div className="text-center lg:text-left mb-5 md:mb-6">
               <h1
@@ -127,10 +135,12 @@ function AddFood() {
                     </div>
                     <div className="form-control">
                       <label className="label">
-                        <span className={`label-text `}>Expiry Date</span>
+                        <span className={`label-text `}>
+                          Expiry Date & Time
+                        </span>
                       </label>
                       <input
-                        type="date"
+                        type="datetime-local"
                         placeholder="Expiry date"
                         defaultValue={currentDate}
                         className="input input-bordered"
@@ -220,7 +230,7 @@ function AddFood() {
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </SectionWrapperSmall>
     </main>
   );
 }

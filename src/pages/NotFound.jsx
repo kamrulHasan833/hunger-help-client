@@ -7,7 +7,11 @@ function NotFound() {
       <SectionWrapper>
         <div className=" font-inter text-center h-[100vh] flex flex-col justify-center items-center">
           <div className="flext justify-center items-center">
-            <img src="https://i.ibb.co/p6HNFSH/not-found.jpg" alt="" />
+            <img
+              src="https://i.ibb.co/p6HNFSH/not-found.jpg"
+              alt=""
+              className="max-w-xl"
+            />
           </div>
 
           <Link

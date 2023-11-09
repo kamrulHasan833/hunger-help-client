@@ -12,7 +12,7 @@ function Goals() {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <section>
+    <section data-aos="fade-up" data-aos-duration="1000">
       <SectionWrapper>
         <SectionHeader>
           <span>Our Goals</span>
