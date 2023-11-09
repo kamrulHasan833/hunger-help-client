@@ -16,7 +16,7 @@ function Navbar() {
   );
   return (
     <HeadRoom style={{ zIndex: 40 }}>
-      <div>
+      <div className="w-full h-auto bg-white">
         <SectionWrapper>
           <div className="navbar bg-base-100 md:py-4">
             <div className="navbar-start">

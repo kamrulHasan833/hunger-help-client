@@ -1,6 +1,7 @@
 import moment from "moment";
 import Swal from "sweetalert2";
 import SectionWrapper from "../components/layouts/SectionWrapper";
+import PageTitile from "../components/shared/PageTitile";
 import useAuth from "../hooks/useAuth";
 import useAxiosCustom from "../hooks/useAxiosCustom";
 function AddFood() {
@@ -55,6 +56,7 @@ function AddFood() {
 
   return (
     <main>
+      <PageTitile title="Add Food" />
       <SectionWrapper>
         <div className={`hero pt-14 md:pt-20 pb-14 md:pb-20 font-inter `}>
           <div className="w-full ">

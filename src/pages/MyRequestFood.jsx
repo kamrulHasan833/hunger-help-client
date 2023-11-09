@@ -6,6 +6,7 @@ import Error from "../components/sections/Error";
 import Spiner from "../components/sections/Spiner";
 import MyRequestSingle from "../components/shared/MyRequestSingle";
 import NoDataInfo from "../components/shared/NoDataInfo";
+import PageTitile from "../components/shared/PageTitile";
 import useAuth from "../hooks/useAuth";
 import useAxiosCustom from "../hooks/useAxiosCustom";
 import useIsError from "../hooks/useIsError";
@@ -74,6 +75,7 @@ function MyRequestFood() {
   };
   return (
     <main className={"bg-white"}>
+      <PageTitile title="404 Not Found" />
       {isLoading ? (
         <Spiner />
       ) : isError ? (
@@ -90,7 +92,7 @@ function MyRequestFood() {
             </h3>
             <Link
               to="/available-foods"
-              className="px-2 md:px-4 py-1 md:py-2 text-sm md:text-base text-white rounded-lg  bg-primary hover:bg-secondary"
+              className="px-5 md:px-7 py-2 md:py-2 text-sm md:text-base text-white rounded-full  bg-primary-color hover:bg-secondary-color"
             >
               All Foods
             </Link>

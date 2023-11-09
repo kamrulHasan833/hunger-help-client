@@ -35,7 +35,7 @@ function MyRequestSingle({ food, handleDelete }) {
           <p className="text-xs md:text-sm ">${donation_money}</p>
         </td>
         <td>
-          <p className="text-sm text-primary-color md:text-base lg:text-lg font-bold  capitalize">
+          <p className="text-xs text-primary-color md:text-sm font-bold  capitalize">
             {food_status === "available" ? (
               "Pending.."
             ) : (

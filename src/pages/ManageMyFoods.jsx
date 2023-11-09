@@ -5,6 +5,7 @@ import SectionWrapper from "../components/layouts/SectionWrapper";
 import Error from "../components/sections/Error";
 import Spiner from "../components/sections/Spiner";
 import NoDataInfo from "../components/shared/NoDataInfo";
+import PageTitile from "../components/shared/PageTitile";
 import TableFood from "../components/shared/TableFood";
 import useAuth from "../hooks/useAuth";
 import useAxiosCustom from "../hooks/useAxiosCustom";
@@ -42,8 +43,6 @@ function ManageMyFoods() {
   }, [axiosInstance, email]);
   useEffect(() => {}, [foods]);
   const handleDelete = (id) => {
-    setLoading(true);
-    setError(false);
     Swal.fire({
       title: "Are you sure?",
       text: "If you wanna delete this food, click Ok!",
@@ -72,7 +71,6 @@ function ManageMyFoods() {
             }
           })
           .catch(() => {
-            setLoading(false);
             setError(true);
           });
       }
@@ -80,6 +78,7 @@ function ManageMyFoods() {
   };
   return (
     <main className={"bg-white"}>
+      <PageTitile title="Manage Foods" />
       {isLoading ? (
         <Spiner />
       ) : isError ? (

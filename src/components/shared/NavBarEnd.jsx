@@ -73,7 +73,7 @@ function NavbarEnd() {
             <li>
               <button
                 onClick={handleLogout}
-                className="btn bg-transparent border-none  bg-opacity-5 text-secondary capitalize pt-3"
+                className="btn bg-transparent border-none  bg-opacity-5 text-secondary-color capitalize pt-3"
               >
                 <span className=" text-lg  sm:text-xl -mr-1">
                   <BiLogOutCircle></BiLogOutCircle>
@@ -87,7 +87,7 @@ function NavbarEnd() {
       {!user && !loading && (
         <Link
           to="/signin"
-          className="btn text-primary bg-transparent border-none hover:bg-primary bg-opacity-5 text-base font-medium hover:text-white capitalize "
+          className="btn text-primary-color bg-transparent border-none hover:bg-primary-color bg-opacity-5 text-base font-medium hover:text-white capitalize "
         >
           Login
         </Link>

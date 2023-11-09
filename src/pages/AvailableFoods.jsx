@@ -5,6 +5,7 @@ import SearchFood from "../components/sections/SearchFood";
 import SortFood from "../components/sections/SortFood";
 import Spiner from "../components/sections/Spiner";
 import NoDataInfo from "../components/shared/NoDataInfo";
+import PageTitile from "../components/shared/PageTitile";
 import SectionHeader from "../components/shared/SectionHeader";
 import TabContent from "../components/shared/TabContent";
 import useAxiosCustom from "../hooks/useAxiosCustom";
@@ -88,6 +89,8 @@ function AvailableFoods() {
   };
   return (
     <main>
+      <PageTitile title="Available Foods" />
+      <SectionWrapper></SectionWrapper>
       <section
         className="pt-10 md:pt-14 "
         data-aos="fade-up"

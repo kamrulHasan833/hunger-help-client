@@ -5,6 +5,7 @@ import SectionWrapper from "../components/layouts/SectionWrapper";
 
 import ManageMySLingleFood from "../components/shared/ManageMySLingleFood";
 import NoDataInfo from "../components/shared/NoDataInfo";
+import PageTitile from "../components/shared/PageTitile";
 import useAxiosCustom from "../hooks/useAxiosCustom";
 
 function ManageMySingleFoods() {
@@ -100,6 +101,7 @@ function ManageMySingleFoods() {
   };
   return (
     <main className={"bg-white"}>
+      <PageTitile title="Manage Single Food" />
       <SectionWrapper>
         <div className="flex justify-between items-center  font-inter">
           <h3
@@ -108,8 +110,8 @@ function ManageMySingleFoods() {
             Got Requestes
           </h3>
           <Link
-            to="/add-product"
-            className="px-2 md:px-4 py-1 md:py-2 text-sm md:text-base text-white rounded-lg  bg-primary hover:bg-secondary"
+            to="/add-food"
+            className="px-2 md:px-4 py-1 md:py-2 text-sm md:text-base text-white rounded-lg  bg-primary-color hover:bg-secondary-color"
           >
             Donate
           </Link>

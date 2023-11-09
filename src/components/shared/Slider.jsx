@@ -17,7 +17,6 @@ function Slider({ slides }) {
       navigation={true}
       pagination={{
         clickable: true,
-        bulletActiveClass: "bg-dark w-10 opacity-100 rounded-xl",
       }}
       modules={[Navigation, Autoplay, Pagination, EffectFade]}
       className={`hero-swiper w-full mySwiper`}

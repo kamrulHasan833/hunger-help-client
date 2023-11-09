@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
       if (currenUser) {
         axios
           .post(
-            "https://hunger-help-server.vercel.app/jsonwebtoken",
+            "http://localhost:5000/jsonwebtoken",
             {
               username: currenUser.displayName,
               email: currenUser.email,
@@ -41,7 +41,7 @@ const AuthProvider = ({ children }) => {
           .catch((err) => console.log(err));
       } else {
         axios
-          .delete("https://hunger-help-server.vercel.app/signout", {
+          .delete("http://localhost:5000/signout", {
             withCredentials: true,
           })
           .then(() => {})

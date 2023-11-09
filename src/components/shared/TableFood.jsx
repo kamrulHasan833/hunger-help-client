@@ -52,7 +52,7 @@ function TableFood({ food, handleDelete }) {
 
         <td>
           <p
-            className={`text-sm md:text-base ${
+            className={`text-sm md:text-base text-center ${
               food_status === "available"
                 ? "bg-primary-color "
                 : "bg-desc-color"

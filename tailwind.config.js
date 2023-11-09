@@ -14,6 +14,7 @@ export default {
       maxWidth: {
         large: "120rem",
         standard: "96rem",
+        secondary: "70rem",
       },
       fontFamily: {
         raleway: "'Raleway', sans-serif",

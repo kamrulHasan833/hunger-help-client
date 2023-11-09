@@ -8,7 +8,7 @@ function SectionHeader({ children }) {
       data-aos-duration="1000"
     >
       <h1
-        className={`text-3xl text-titile-color lg:text-4xl capitalize text-center  font-medium`}
+        className={`text-3xl text-titile-color lg:text-4xl capitalize text-center font-semibold `}
       >
         {children}
       </h1>

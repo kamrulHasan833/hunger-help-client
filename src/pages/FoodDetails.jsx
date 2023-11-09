@@ -1,11 +1,11 @@
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import SectionWrapper from "../components/layouts/SectionWrapper";
 import Error from "../components/sections/Error";
 import RequestModal from "../components/sections/RequestModal";
 import Spiner from "../components/sections/Spiner";
 import NoDataInfo from "../components/shared/NoDataInfo";
+import PageTitile from "../components/shared/PageTitile";
 import SectionHeader from "../components/shared/SectionHeader";
 import useAxiosCustom from "../hooks/useAxiosCustom";
 import useIsEmptyDatd from "../hooks/useIsEmptyData";
@@ -51,20 +51,21 @@ function FoodctDetails() {
 
   return (
     <main>
+      <PageTitile title="Food Details" />
       {isLoading ? (
         <Spiner></Spiner>
       ) : isError ? (
         <Error />
       ) : isEmpty ? (
-        <NoDataInfo>No Product Details</NoDataInfo>
+        <NoDataInfo>No Food Details</NoDataInfo>
       ) : (
         <>
           {/* donor info section */}
           <section>
-            <SectionWrapper>
-              <SectionHeader>
+            <div>
+              <div className="pt-10 text-2xl md:4xl font-bold text-center pb-4">
                 <span>Donor Info</span>
-              </SectionHeader>
+              </div>
 
               <div className="flex justify-center">
                 <div className="flex flex-col items-center ">
@@ -88,11 +89,11 @@ function FoodctDetails() {
                   </div>
                 </div>
               </div>
-            </SectionWrapper>
+            </div>
           </section>
           {/* food details section */}
           <section className="pb-10 md:pb-14 lg:pb-20">
-            <div className="max-w-6xl mx-6 lg:mx-auto ">
+            <div className="max-w-3xl mx-6 md:mx-auto ">
               <SectionHeader>
                 <span>Food Details</span>
               </SectionHeader>
@@ -137,7 +138,7 @@ function FoodctDetails() {
                   </p>
                   <div>
                     <button
-                      className="font-bold text-white bg-secondary-color hover:bg-primary-color px-8 md:px-14  py-3  rounded-full mt-6 md:mt-8"
+                      className="font-bold text-white bg-secondary-color  text-xs md:text-sm hover:bg-primary-color px-6 md:px-8 py-2  rounded-full mt-3 md:mt-5"
                       onClick={() =>
                         document.getElementById("my_modal_1").showModal()
                       }

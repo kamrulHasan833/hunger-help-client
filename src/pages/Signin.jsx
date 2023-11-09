@@ -2,8 +2,9 @@ import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import SectionWrapper from "../components/layouts/SectionWrapper";
+import SectionWrapperSmall from "../components/layouts/SectionWrapperSmall";
 import LoginButton from "../components/shared/LoginButton";
+import PageTitile from "../components/shared/PageTitile";
 import useAuth from "../hooks/useAuth";
 
 function Signin() {
@@ -90,7 +91,8 @@ function Signin() {
 
   return (
     <section className={` bg-white `}>
-      <SectionWrapper>
+      <PageTitile title="Sign In" />
+      <SectionWrapperSmall>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center  md:shadow-lg md:px-10">
           <div className=" col-span-2 hidden md:block">
             {" "}
@@ -190,7 +192,7 @@ function Signin() {
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </SectionWrapperSmall>
     </section>
   );
 }

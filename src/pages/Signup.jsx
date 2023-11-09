@@ -4,8 +4,9 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-import SectionWrapper from "../components/layouts/SectionWrapper";
+import SectionWrapperSmall from "../components/layouts/SectionWrapperSmall";
 import LoginButton from "../components/shared/LoginButton";
+import PageTitile from "../components/shared/PageTitile";
 import useAuth from "../hooks/useAuth";
 
 function Signup() {
@@ -101,7 +102,8 @@ function Signup() {
   };
 
   return (
-    <SectionWrapper>
+    <SectionWrapperSmall>
+      <PageTitile title="Sign UP" />
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center  md:shadow-lg md:px-10">
         <div className=" col-span-2 hidden md:block">
           {" "}
@@ -212,7 +214,7 @@ function Signup() {
           </div>
         </div>
       </div>
-    </SectionWrapper>
+    </SectionWrapperSmall>
   );
 }
 

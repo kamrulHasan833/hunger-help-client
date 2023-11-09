@@ -6,6 +6,7 @@ import SectionWrapper from "../components/layouts/SectionWrapper";
 import Error from "../components/sections/Error";
 import Spiner from "../components/sections/Spiner";
 import NoDataInfo from "../components/shared/NoDataInfo";
+import PageTitile from "../components/shared/PageTitile";
 import useAxiosCustom from "../hooks/useAxiosCustom";
 import useIsEmptyData from "../hooks/useIsEmptyData";
 import useIsError from "../hooks/useIsError";
@@ -97,6 +98,7 @@ function UpdateAFood() {
 
   return (
     <main className={` "bg-white" `}>
+      <PageTitile title="Update Product" />
       <>
         {isLoading ? (
           <Spiner />

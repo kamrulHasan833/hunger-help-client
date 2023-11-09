@@ -60,17 +60,15 @@ function RequestModal({ food }) {
   };
   return (
     <dialog id="my_modal_1" className="modal">
-      <div className="modal-box w-[97%] max-w-4xl max-h-auto">
-        <div className={`hero pt-8 md:pt-12 pb-8 md:pb-10 font-inter `}>
+      <div className="modal-box  max-w-2xl max-h-auto rounded-md">
+        <div className={`hero font-inter `}>
           <div className="w-full ">
-            <div className="text-center mb-5 md:mb-6">
-              <h1
-                className={`text-3xl md:text-4xl text-title-color lg:text-5xl font-bold `}
-              >
+            <div className="text-center mb-1">
+              <h1 className={`text-xl text-title-color  font-bold `}>
                 Give Some Info
               </h1>
               <p
-                className={`mt-2 pb-6 
+                className={`mt-2 pb-1 text-sm
                 `}
               >
                 If you want donte money or food, you can.
@@ -78,63 +76,84 @@ function RequestModal({ food }) {
             </div>
             <div className={`w-full border `}>
               <form className=" p-6 " onSubmit={handleCreateRequest}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* left */}
                   <div className="  space-y-2">
                     <div className="form-control">
                       <div>
-                        <img src={food_image} alt="" />
+                        <img src={food_image} alt="" className="w-24 md:w-28" />
                       </div>
                     </div>
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>Food Name</span>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
+                          Food Name
+                        </span>
                       </label>
                       <input
                         type="text"
                         placeholder={food_name}
                         defaultValue={food_name}
-                        className="input input-bordered"
+                        className="input input-bordered text-xs h-7"
                         name="name"
                         disabled
                       />
                     </div>
 
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>Food Id</span>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs `}>Food Id</span>
                       </label>
                       <input
                         type="text"
                         placeholder={_id}
                         defaultValue={_id}
-                        className="input input-bordered"
+                        className="input input-bordered text-xs h-7"
                         name="name"
                         disabled
                       />
                     </div>
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>Donator Name</span>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
+                          Donator Name
+                        </span>
                       </label>
                       <input
                         type="text"
                         placeholder={name}
                         defaultValue={name}
-                        className="input input-bordered"
+                        className="input input-bordered text-xs h-7"
                         name="name"
                         disabled
                       />
                     </div>
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>Donator Email</span>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
+                          Donator Email
+                        </span>
                       </label>
                       <input
                         type="text"
                         placeholder={email}
                         defaultValue={email}
-                        className="input input-bordered"
+                        className="input input-bordered text-xs h-7"
+                        name="name"
+                        disabled
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
+                          Your Name
+                        </span>
+                      </label>
+                      <input
+                        type="text"
+                        placeholder={displayName}
+                        defaultValue={displayName}
+                        className="input input-bordered text-xs h-7"
                         name="name"
                         disabled
                       />
@@ -143,87 +162,83 @@ function RequestModal({ food }) {
                   {/* rigth */}
                   <div className=" flex-wrap space-y-2">
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>Your Name</span>
-                      </label>
-                      <input
-                        type="text"
-                        placeholder={displayName}
-                        defaultValue={displayName}
-                        className="input input-bordered"
-                        name="name"
-                        disabled
-                      />
-                    </div>
-                    <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>Your Email</span>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
+                          Your Email
+                        </span>
                       </label>
                       <input
                         type="text"
                         placeholder={userEmail}
                         defaultValue={userEmail}
-                        className="input input-bordered"
+                        className="input input-bordered text-xs h-7"
                         name="name"
                         disabled
                       />
                     </div>
-
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>Quantity</span>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
+                          Quantity
+                        </span>
                       </label>
                       <input
                         type="text"
                         placeholder={quantity}
                         defaultValue={quantity + " " + "  (persons food)"}
-                        className="input input-bordered"
+                        className="input input-bordered text-xs h-7"
                         name="name"
                         disabled
                       />
                     </div>
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>Pickup Location</span>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
+                          Pickup Location
+                        </span>
                       </label>
                       <input
                         type="text"
                         placeholder={pickup_location}
                         defaultValue={pickup_location}
-                        className="input input-bordered"
+                        className="input input-bordered text-xs h-7"
                         name="name"
                         disabled
                       />
                     </div>
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>Request Date</span>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
+                          Request Date
+                        </span>
                       </label>
                       <input
                         type="text"
                         placeholder={currentDate}
                         defaultValue={currentDate}
-                        className="input input-bordered"
+                        className="input input-bordered text-xs h-7"
                         name="name"
                         disabled
                       />
                     </div>
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>Expiry Date</span>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
+                          Expiry Date
+                        </span>
                       </label>
                       <input
                         type="text"
                         placeholder={dateAndTime}
                         defaultValue={dateAndTime}
-                        className="input input-bordered"
+                        className="input input-bordered text-xs h-7"
                         name="dateAndTime"
                         disabled
                       />
                     </div>
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
                           Additional Notes (optional)
                         </span>
                       </label>
@@ -231,20 +246,20 @@ function RequestModal({ food }) {
                         type="text"
                         placeholder="Give additional notes"
                         defaultValue={additional_notes}
-                        className="input input-bordered"
+                        className="input input-bordered text-xs h-7"
                         name="additionalNotes"
                       />
                     </div>
                     <div className="form-control">
-                      <label className="label">
-                        <span className={`label-text `}>
+                      <label className="label py-[1px]">
+                        <span className={`label-text text-xs py-0`}>
                           Donation Money (optional)
                         </span>
                       </label>
                       <input
                         type="text"
                         placeholder="Donation amount"
-                        className="input input-bordered"
+                        className="input input-bordered cus text-xs h-7"
                         name="donationMoney"
                       />
                     </div>
@@ -254,7 +269,7 @@ function RequestModal({ food }) {
                   <div className="flex items-center gap-6">
                     <button
                       type="submit"
-                      className="btn  btn-primary bg-primary-color  text-white border-none hover:bg-secondary-color"
+                      className="px-5 py-2 rounded-full text-sm font-bold   bg-primary-color  text-white border-none hover:bg-secondary-color"
                     >
                       Confirm
                     </button>
@@ -263,7 +278,7 @@ function RequestModal({ food }) {
                       onClick={() =>
                         document.getElementById("my_modal_1").close()
                       }
-                      className="btn hover:bg-primary-color  text-white border-none bg-secondary-color"
+                      className="px-5 py-2 rounded-full text-sm bg-secondary-color font-bold hover:bg-primary-color cursor-pointer text-white border-none "
                     >
                       Cancel
                     </span>
