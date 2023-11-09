@@ -1,8 +1,8 @@
 # Hunger Help
 
-## [Project Live Link](https://hunger-help.web.app)
+## [Project Live Link](https://phenomenal-stardust-ce9e22.netlify.app/)
 
-Click here to see project demo: [https://hunger-help.web.app](https://hunger-help.web.app)
+Click here to see project demo: [https://phenomenal-stardust-ce9e22.netlify.app/](https://phenomenal-stardust-ce9e22.netlify.app/)
 
 ###### The five features of my project are given below:
 
