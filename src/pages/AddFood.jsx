@@ -15,7 +15,7 @@ function AddFood() {
     const form = e.target;
     const food_name = form.food_name.value;
     const food_image = form.food_image.value;
-    const quantity = form.quantity.value;
+    const quantity = parseInt(form.quantity.value);
     const pickup_location = form.pickup_location.value;
     const expiry_date = moment(
       form.expiry_date.value,

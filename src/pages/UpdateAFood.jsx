@@ -56,7 +56,7 @@ function UpdateAFood() {
     const form = e.target;
     const food_name = form.food_name.value;
     const food_image = form.food_image.value;
-    const quantity = form.quantity.value;
+    const quantity = parseInt(form.quantity.value);
     const pickup_location = form.pickup_location.value;
     const donator_image = form.donator_image.value;
     const expiry_date = moment(
