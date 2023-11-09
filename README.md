@@ -1,8 +1,8 @@
 # Hunger Help
 
-## [Project Live Link](https://hunger-help.web.app/)
+## [Project Live Link](https://hunger-help.web.app)
 
-Click here to see project demo: [https://corporate-evnet.web.app](https://hunger-help.web.app/)
+Click here to see project demo: [https://hunger-help.web.app](https://hunger-help.web.app)
 
 ###### The five features of my project are given below:
 
